@@ -13,7 +13,7 @@ spring:
     active: dev
   data:
     mongodb:
-      uri: mongodb+srv://paftest2:paftest2@cluster0.pisau6d.mongodb.net/
+      uri: mongodb+srv://pabasarawijesundara402:wj4ZYv1Ntbt4jDyy@cluster0.jrv48k1.mongodb.net/PAF_DB
       database: ${MONGODB_DB}
 
   security:
