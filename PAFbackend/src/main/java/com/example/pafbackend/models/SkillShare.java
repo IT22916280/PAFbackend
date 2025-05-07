@@ -20,3 +20,5 @@ public class SkillShare {
     private List<String> mediaTypes; // List to store media types (image/video)
     private String ingredients;
 }
+
+//skillshare model modifiesd
