@@ -82,57 +82,9 @@ const Community = () => {
   return (
     <div>
       {/* Navigation Bar */}
-      <header className="">
-        <nav>
-          {/* <div className="nav__header">
-            <div className="nav__logo">
-              <Link to="/">
-              <img src="/assets/LearnLoop.svg" alt="logo" />
-              
-              </Link>
-            </div>
-            <div className="nav__menu__btn" id="menu-btn">
-              <span>
-                <i className="ri-menu-line"></i>
-              </span>
-            </div>
-          </div> */}
-          {/* <ul className="nav__links" id="nav-links">
-            <li className="link">
-              <Link to="/">Contact Us</Link>
-            </li>
-            <li className="link">
-              <Link to="#browse-skills">Browse Skills</Link>
-            </li>
-            <li className="link">
-              <Link
-                to="/community"
-                onClick={() => {
-                  if (!localStorage.getItem("userId")) {
-                    setIsAuthModalOpened(true); // Open authentication modal if not logged in
-                  }
-                }}
-              >
-                Share Skills
-              </Link>
-            </li>
-            <li className="link">
-              <button
-                onClick={() => {
-                  if (localStorage.getItem("userId")) {
-                    navigate("/"); // Navigate to the community page
-                  } else {
-                    setIsAuthModalOpened(true); // Open authentication modal
-                  }
-                }}
-                className="btn"
-              >
-              LearnLoop Home 
-              </button>
-            </li>
-          </ul> */}
-        </nav>
-      </header>
+      {/* <header className="">
+        
+      </header> */}
 
       <div className="main">
         <CenterSection />

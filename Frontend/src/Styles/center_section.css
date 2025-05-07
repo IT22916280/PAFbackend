@@ -13,12 +13,12 @@
   .main .center {
       width: 100%;
       height: auto;
-      padding: 20px 20px 0 20px;
+      /* padding: 20px 20px 0 20px; */
       background: #ffffff;
       min-height: 98vh;
-      margin-right: 20%;
-      margin-left: 20%;
-      animation: shadow-pulse 2s infinite;
+      /* margin-right: 20%;
+      margin-left: 20%; */
+      /* animation: shadow-pulse 2s infinite; */
   }
   
 .main .center::-webkit-scrollbar{
@@ -43,7 +43,7 @@
     overflow: hidden;
     margin-right: 0;
     box-shadow: 0 1px 8px rgba(64, 62, 62, 0.2);
-    /* border-radius: 1000px; */
+    border-radius: 10px;
     cursor: pointer;
     margin-right: 8px;
 }
@@ -72,7 +72,7 @@
     margin: 0 auto;
     position: relative;
     bottom: 15px;
-    /* border-radius: 50%; */
+    border-radius: 50%;
 }
 
 .main .center .top_box .my_story_card .story_upload .story_tag{
@@ -93,7 +93,7 @@
     overflow: hidden;
     margin-right: 8px;
     box-shadow: 0 1px 8px rgba(0,0,0,0.2);
-    /* border-radius: 100px; */
+    border-radius: 10px;
     cursor: pointer;
     border: 3px solid #f92524;
 }
@@ -114,7 +114,7 @@
 .main .center .top_box .story_card .story_profile img{
     width: 40px;
     height: 40px;
-    /* border-radius: 50%; */
+    border-radius: 50%;
     border: 4px solid #45abff;
 }
 
