@@ -38,7 +38,9 @@ const themeColors = {
   success: "#10B981", // Vibrant green for success states
   neutral: "#94A3B8", // Neutral gray-blue for inactive elements
   shadow: "rgba(37, 99, 235, 0.1)", // Subtle blue-tinted shadow
-  gradient: "linear-gradient(145deg, #2563EB 0%,rgb(58, 198, 237) 100%)" // Professional gradient
+  gradient: "linear-gradient(145deg, #2563EB 0%,rgb(58, 198, 237) 100%)", // Professional gradient
+  selectedTheme: "#2563EB",
+  selectedText: "#ffffff",
 };
 
 const CenterSection = () => {
@@ -110,7 +112,7 @@ const CenterSection = () => {
           }}
         >
           <img style={{ maxHeight: 60 }} src="/assets/learnloop.svg" alt="logo" />
-          learnloop
+          LearnLoop
         </div>
         <Avatar
           style={{
@@ -174,9 +176,9 @@ const CenterSection = () => {
                   position: "relative",
                   flex: 1,
                   textAlign: "center",
-                  borderBottom: tab.key === activeTab 
-                    ? `3px solid ${themeColors.primary}` 
-                    : "3px solid transparent",
+                  // borderBottom: tab.key === activeTab 
+                  //   ? `3px solid ${themeColors.primary}` 
+                  //   : "3px solid transparent",
                   color: tab.key === activeTab 
                     ? themeColors.primary 
                     : themeColors.textSecondary,
