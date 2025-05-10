@@ -41,7 +41,7 @@ public class PostController {
         Post savedPost = postRepository.save(post);
         return new ResponseEntity<>(savedPost, HttpStatus.CREATED);
     }
-
+    // Delete a post by its ID
     @DeleteMapping("/{postId}")
     public ResponseEntity<Void> deletePost(@PathVariable String postId) {
         postRepository.deleteById(postId);
