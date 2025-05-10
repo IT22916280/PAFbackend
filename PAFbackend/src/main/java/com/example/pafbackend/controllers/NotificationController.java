@@ -19,13 +19,13 @@ public class NotificationController {
     public NotificationController(NotificationRepository notificationRepository) {
         this.notificationRepository = notificationRepository;
     }
-
+// GET: Retrieve all notifications from the database
     @GetMapping
     public ResponseEntity<List<Notification>> getAllNotifications() {
         List<Notification> notifications = notificationRepository.findAll();
         return new ResponseEntity<>(notifications, HttpStatus.OK);
     }
-
+// POST: Create a new notification entry
     @PostMapping
     public ResponseEntity<Notification> createNotification(@RequestBody Notification notification) {
         Notification savedNotification = notificationRepository.save(notification);
