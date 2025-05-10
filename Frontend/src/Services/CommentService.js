@@ -3,6 +3,7 @@ import { BASE_URL } from "../constants";
 import NotificationService from "./NotificationService";
 
 class CommentService {
+// Creates a new comment and sends a notification to the post owner
   async createComment(commentData, username, userId) {
     try {
       const accessToken = localStorage.getItem("accessToken");
@@ -21,7 +22,7 @@ class CommentService {
           const body = {
             userId: userId,
             message: "You have a new comment",
-            description: "Your post commented by " + username,
+            description: "The post commented by " + username,
           };
 
           await NotificationService.createNotification(body);
@@ -33,6 +34,7 @@ class CommentService {
     }
   }
 
+  // Retrieves all comments for a given post ID
   async getCommentsByPostId(postId) {
     try {
       const accessToken = localStorage.getItem("accessToken");
@@ -51,6 +53,7 @@ class CommentService {
     }
   }
 
+// Updates an existing comment by its ID
   async updateComment(commentId, commentData) {
     try {
       const accessToken = localStorage.getItem("accessToken");
@@ -70,6 +73,7 @@ class CommentService {
     }
   }
 
+// Deletes a comment by its ID
   async deleteComment(commentId) {
     try {
       const accessToken = localStorage.getItem("accessToken");
