@@ -21,13 +21,13 @@ public class CommentController {
     @Autowired
     private UserRepository userRepository;
 
-    // POST: Create a new Comment
+    //Create a new Comment
     @PostMapping
     public Comment createComment(@RequestBody Comment comment) {
         return commentRepository.save(comment);
     }
 
-    // GET: Retrieve all Comments with User details populated
+    //Retrieve all Comments with User details populated
     @GetMapping
     public List<Comment> getAllComments() {
         List<Comment> comments = commentRepository.findAll();
@@ -35,7 +35,7 @@ public class CommentController {
         return comments;
     }
 
-    // GET: Retrieve a Comment by ID with User details populated
+    // Retrieve a Comment by ID with User details populated
     @GetMapping("/{id}")
     public ResponseEntity<Comment> getCommentById(@PathVariable String id) {
         Optional<Comment> comment = commentRepository.findById(id);
@@ -44,7 +44,7 @@ public class CommentController {
         }).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    // PUT: Update a Comment by ID
+    // Update a Comment by ID
     @PutMapping("/{id}")
     public ResponseEntity<Comment> updateComment(@PathVariable String id, @RequestBody Comment commentDetails) {
         return commentRepository.findById(id).map(comment -> {
@@ -55,7 +55,7 @@ public class CommentController {
         }).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    // DELETE: Delete a Comment by ID
+    //  Delete a Comment by ID
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteComment(@PathVariable String id) {
         return commentRepository.findById(id).map(comment -> {
