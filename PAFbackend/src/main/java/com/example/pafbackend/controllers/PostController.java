@@ -10,7 +10,7 @@ import java.util.Optional;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/posts")
+@RequestMapping("/api/posts") // Base URL for all post-related endpoints
 public class PostController {
 
     private final PostRepository postRepository;
@@ -50,7 +50,7 @@ public class PostController {
         Optional<Post> optionalPost = postRepository.findById(postId);
         if (optionalPost.isPresent()) {
             Post existingPost = optionalPost.get();
-            // Update fields if present in the request body
+            // Update fields if presented in the request body
             if (updatedPost.getMediaLink() != null) {
                 existingPost.setMediaLink(updatedPost.getMediaLink());
             }
