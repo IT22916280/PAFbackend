@@ -10,36 +10,38 @@ import java.util.Optional;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/posts")
+@RequestMapping("/api/posts") // Base URL for all post-related endpoints
 public class PostController {
 
     private final PostRepository postRepository;
 
-    @Autowired
+    @Autowired // Injecting the PostRepository dependency
     public PostController(PostRepository postRepository) {
         this.postRepository = postRepository;
     }
 
 
-
+     // Retrieve all posts
     @GetMapping
     public ResponseEntity<List<Post>> getPosts() {
         List<Post> posts = postRepository.findAll();
         return new ResponseEntity<>(posts, HttpStatus.OK);
     }
 
+    // Retrieve posts by a specific user ID
     @GetMapping("/{userId}")
     public ResponseEntity<List<Post>> getPostsByUserId(@PathVariable String userId) {
         List<Post> posts = postRepository.findByUserId(userId);
         return new ResponseEntity<>(posts, HttpStatus.OK);
     }
 
+    // Create a new post
     @PostMapping
     public ResponseEntity<Post> createPost(@RequestBody Post post) {
         Post savedPost = postRepository.save(post);
         return new ResponseEntity<>(savedPost, HttpStatus.CREATED);
     }
-
+    // Delete a post by its ID
     @DeleteMapping("/{postId}")
     public ResponseEntity<Void> deletePost(@PathVariable String postId) {
         postRepository.deleteById(postId);
@@ -50,7 +52,7 @@ public class PostController {
         Optional<Post> optionalPost = postRepository.findById(postId);
         if (optionalPost.isPresent()) {
             Post existingPost = optionalPost.get();
-            // Update fields if present in the request body
+            // Update fields if presented in the request body
             if (updatedPost.getMediaLink() != null) {
                 existingPost.setMediaLink(updatedPost.getMediaLink());
             }
@@ -60,7 +62,8 @@ public class PostController {
             if (updatedPost.getContentDescription() != null) {
                 existingPost.setContentDescription(updatedPost.getContentDescription());
             }
-            // Save the updated post
+            //saved fields
+            // Saved  the update post
             Post savedPost = postRepository.save(existingPost);
             return new ResponseEntity<>(savedPost, HttpStatus.OK);
         } else {
