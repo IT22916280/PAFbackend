@@ -19,19 +19,19 @@ public class LikeController {
     public LikeController(LikeRepository likeRepository) {
         this.likeRepository = likeRepository;
     }
-
+// GET: Retrieve all likes for a given post ID
     @GetMapping("/{postId}")
     public ResponseEntity<List<Like>> getLikesByPostId(@PathVariable String postId) {
         List<Like> likes = likeRepository.findByPostId(postId);
         return new ResponseEntity<>(likes, HttpStatus.OK);
     }
-
+// POST: Create a new like
     @PostMapping
     public ResponseEntity<Like> createLike(@RequestBody Like like) {
         Like savedLike = likeRepository.save(like);
         return new ResponseEntity<>(savedLike, HttpStatus.CREATED);
     }
-
+// DELETE: Remove a like by its ID
     @DeleteMapping("/{likeId}")
     public ResponseEntity<Void> deleteLike(@PathVariable String likeId) {
         likeRepository.deleteById(likeId);
