@@ -3,7 +3,7 @@ import { BASE_URL } from "../constants";
 import NotificationService from "./NotificationService";
 
 class CommentService {
-// Creates a new comment and sends a notification to the post owner
+//POST: Creates a new comment and sends a notification to the post owner
   async createComment(commentData, username, userId) {
     try {
       const accessToken = localStorage.getItem("accessToken");
@@ -34,7 +34,7 @@ class CommentService {
     }
   }
 
-  // Retrieves all comments for a given post ID
+  //GET: Retrieves all comments for a given post ID
   async getCommentsByPostId(postId) {
     try {
       const accessToken = localStorage.getItem("accessToken");
@@ -53,7 +53,7 @@ class CommentService {
     }
   }
 
-// Updates an existing comment by its ID
+//PUT: Updates an existing comment by its ID
   async updateComment(commentId, commentData) {
     try {
       const accessToken = localStorage.getItem("accessToken");
@@ -73,7 +73,7 @@ class CommentService {
     }
   }
 
-// Deletes a comment by its ID
+//DELETE: Deletes a comment by its ID
   async deleteComment(commentId) {
     try {
       const accessToken = localStorage.getItem("accessToken");

@@ -3,6 +3,7 @@ import { BASE_URL } from "../constants";
 import NotificationService from "./NotificationService";
 
 class LikeService {
+  //GET: Fetches all likes for a specific post using postID
   async getLikesByPostId(postId) {
     try {
       const accessToken = localStorage.getItem("accessToken");
@@ -17,7 +18,7 @@ class LikeService {
       throw new Error("Failed to get likes by post ID");
     }
   }
-
+//Create a like.
   async createLike(likeData, username, userId) {
     try {
       const accessToken = localStorage.getItem("accessToken");
@@ -43,7 +44,7 @@ class LikeService {
       throw new Error("Failed to create like");
     }
   }
-
+//Deletes a like using its likeId
   async deleteLike(likeId) {
     try {
       const accessToken = localStorage.getItem("accessToken");
