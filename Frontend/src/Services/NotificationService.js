@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_URL = "http://localhost:8080/api/notifications";
-
+//GET: Fetches all notifications
 const NotificationService = {
   getAllNotifications: async () => {
     const accessToken = localStorage.getItem("accessToken");
@@ -18,7 +18,7 @@ const NotificationService = {
       throw error;
     }
   },
-
+//POST: Creates a new notification
   createNotification: async (notificationData) => {
     const accessToken = localStorage.getItem("accessToken");
     const config = {
