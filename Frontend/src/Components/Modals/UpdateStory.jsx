@@ -267,7 +267,7 @@ const UpdateStory = () => {
             </Col>
             <Col span={12}>
               <div>
-                <Text type="secondary">Exercise Type</Text>
+                <Text type="secondary">Learning Type</Text>
                 <div>{workoutStory?.exerciseType || 'N/A'}</div>
               </div>
             </Col>
