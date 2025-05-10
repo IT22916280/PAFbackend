@@ -15,7 +15,7 @@ public class PostController {
 
     private final PostRepository postRepository;
 
-    @Autowired
+    @Autowired // Injecting the PostRepository dependency
     public PostController(PostRepository postRepository) {
         this.postRepository = postRepository;
     }
