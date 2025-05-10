@@ -21,13 +21,14 @@ public class PostController {
     }
 
 
-
+     // Retrieve all posts
     @GetMapping
     public ResponseEntity<List<Post>> getPosts() {
         List<Post> posts = postRepository.findAll();
         return new ResponseEntity<>(posts, HttpStatus.OK);
     }
 
+    // Retrieve posts by a specific user ID
     @GetMapping("/{userId}")
     public ResponseEntity<List<Post>> getPostsByUserId(@PathVariable String userId) {
         List<Post> posts = postRepository.findByUserId(userId);
